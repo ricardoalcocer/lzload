@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container">
+		<TableView id="mytable" onScroll="lazyload"></TableView>
+	</Window>
+</Alloy>
