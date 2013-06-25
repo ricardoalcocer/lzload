@@ -17,12 +17,13 @@ $.mytable.addEventListener('postlayout', function(){
 
 function loadData(){
 	var newRows=[];
+
+	// for demo purposes, I'm loading 20 rows in a loop
 	for (var i=0;i<20;i++){
 		var row=Alloy.createController('tablerow',{text:totalLoaded}).getView();
 		newRows.push(row);
 		totalLoaded++;
 		currentSize+=50;
-		//console.log(totalLoaded);
 	}
 	$.mytable.appendRow(newRows);
 
@@ -33,6 +34,7 @@ function loadData(){
 	},500);
 }
 
+// cross-platform event listener for lazy tableview loading
 function lazyload(_evt){
 	if (OS_IOS){
 		if (currentSize - overlap < _evt.contentOffset.y + initialTableSize){
