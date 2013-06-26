@@ -11,20 +11,19 @@ The iOS Scroll event gives us the contentOffset (A) object which contains the x,
 
 ```
 function lazyload(_evt){
-	if (OS_IOS){
-		if (currentSize - overlap < _evt.contentOffset.y + initialTableSize){
-			if (isLoading) return;
-				isLoading = true;
-				loadData();
-			}
-		}else{
-			if (_evt.firstVisibleItem + _evt.visibleItemCount == _evt.totalItemCount){
-				if (isLoading) return;
-				isLoading = true;
-				loadData();
-			}
-		}	
-	}
+    if (OS_IOS){
+        if (currentSize - overlap < _evt.contentOffset.y + initialTableSize){
+            if (isLoading) return;
+            isLoading = true;
+            loadData();
+        }else{
+            if (_evt.firstVisibleItem + _evt.visibleItemCount == _evt.totalItemCount){
+                if (isLoading) return;
+                isLoading = true;
+                loadData();
+            }
+        }   
+    }
 }
 ```
 
